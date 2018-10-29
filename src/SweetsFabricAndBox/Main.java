@@ -1,6 +1,7 @@
 package SweetsFabricAndBox;
 
 import SweetsFabricAndBox.Box.Box;
+import SweetsFabricAndBox.Box.Converter;
 import SweetsFabricAndBox.Factory.CandyFactory;
 import SweetsFabricAndBox.Factory.MarmeladeFactory;
 import SweetsFabricAndBox.Factory.SweetFactoryWithSize;
@@ -8,6 +9,8 @@ import SweetsFabricAndBox.Factory.SweetsFactory;
 import SweetsFabricAndBox.Sweet.*;
 import SweetsFabricAndBox.Sweet.Candy;
 import SweetsFabricAndBox.Sweet.Marmelade;
+
+import java.util.function.Predicate;
 
 public class Main {
 
@@ -65,6 +68,10 @@ public class Main {
         //а это перегруженный метод определяющий количество сладостей по названию или размеру
         box.infoContentByType(TypeSweet.CANDY);
         box.infoContentByType((Size.MIDDLE));
+        //
+        Converter conver = (a -> box.getPrice()/a);
+        //конвертация цены в валюту. Курс 65.4
+        System.out.println(conver.conver(65.4));
 
 
 

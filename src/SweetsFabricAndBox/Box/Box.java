@@ -15,6 +15,9 @@ public class Box implements PrintInfo{
 
     private Predicate testSweets;
 
+
+
+
     public void add (Sweets sweets){
         if (testSweets.testSweet(sweets)){
             boxContent.add(sweets);
@@ -90,5 +93,9 @@ public class Box implements PrintInfo{
                 .filter(s -> s.size.name().equals(size.name()))
                 .count();
         System.out.println("В коробке " + a + " сладостей размера " + size.name());
+    }
+
+    public double getPrice() {
+        return price;
     }
 }

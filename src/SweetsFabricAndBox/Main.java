@@ -69,9 +69,9 @@ public class Main {
         box.infoContentByType(TypeSweet.CANDY);
         box.infoContentByType((Size.MIDDLE));
         //
-        Converter conver = (a -> box.getPrice()/a);
+        Converter conver = (double a,Box b) -> (b.getPrice()/a);
         //конвертация цены в валюту. Курс 65.4
-        System.out.println(conver.conver(65.4));
+        System.out.println(conver.conver(65.4, box));
 
 
 
